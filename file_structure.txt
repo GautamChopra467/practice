@@ -1,0 +1,20 @@
+.github/
+├── workflows/
+│   ├── feature-branch.yml       # Runs on PRs to feature branches
+│   ├── dev-qa-deployment.yml    # Runs on merges to dev branch
+│   ├── release-promotion.yml    # Runs on merges to release branch
+│   └── prod-deployment.yml      # Manual trigger for production
+├── environments/
+│   ├── dev/
+│   │   └── variables
+│   ├── qa/
+│   │   └── variables
+│   ├── uat/
+│   │   └── variables
+│   └── prod/
+│       └── variables
+└── scripts/
+    ├── build.sh
+    ├── test.sh
+    ├── deploy-to-ecs.sh
+    └── notify.sh
