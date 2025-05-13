@@ -18,3 +18,20 @@
     ├── test.sh
     ├── deploy-to-ecs.sh
     └── notify.sh
+
+
+
+
+For my project I have thought of this you can also suggest any changes if should be made, it is in github actions the CI/CD
+
+Developers should work on multiple feature branches, these branch will run these stages (build, test cases, code coverage) and if everything works then a PR will be raised to "dev" branch
+
+When code will be merged to the dev branch then these stages would run(build, push image to ecr, make a new task and deploy to ecs service) This branch should work only on dev and qa environment
+
+Now after proper check on dev and qa env, then a PR will be raised to release branch, after merging then these stages would run(build, push image to ecr, make a new task and deploy to ecs service) This branch should first work on uat env and if everything works fine then someone can manually run on prod env, both of these env should require approvers before running
+
+After code runs successfully on prod env, in 2-3 days the code will be pushed to master branch
+
+Design the folder structure and code for this, and some secrets could be different for each env, eg aws account for dev and qa env is same but different from prod and uat, some other variables are alos there
+
+Design the whole architecture
